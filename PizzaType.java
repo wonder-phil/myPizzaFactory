@@ -1,7 +1,7 @@
 public enum PizzaType {
-    Cheese, 
-    Greek,
-    Peperoni,
-    GlutenFree,
-    Vegan
+    CHEESE, 
+    GREEK,
+    PEPPERONI,
+    GLUTEN_FREE,
+    VEGAN
 }

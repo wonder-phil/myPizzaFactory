@@ -1,10 +1,10 @@
-public class VeganPizza implements Pizza {
-    
-    public VeganPizza() {
-        this.pizzaType = PizzaType.VEGAN;
-    }
-    
+public class GreekPizza implements Pizza {
+
     private PizzaType pizzaType;
+
+    public GreekPizza() {
+        this.pizzaType = PizzaType.GREEK;
+    }
 
     public void prepare() {
         System.out.println("Preparing a " + TranslatePizzaType.fromPizzaTypeEnumToString(pizzaType));
