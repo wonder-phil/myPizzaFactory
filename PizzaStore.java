@@ -1,20 +1,21 @@
 import java.util.Scanner;
 
+
+
 public class PizzaStore {
     private String name;
     private String address;
 
     public static void main(String[] args) {
-        //Pizza myPizzaShop = new PizzaShop("Gourmet Pizza", "123 Flavor  St");   
+           
         PizzaFactory pizzaFactory = new PizzaFactory();
 
-        Scanner scanner = new Scanner(System.in);
-        String pizzaType;
         boolean valid = false;
-
         Pizza pizzaOrder = null;
+        Scanner scanner = new Scanner(System.in);
 
         while (!valid) {
+            
             System.out.print("Enter pizza type (Cheese, Greek, Pepperoni, Vegan, GlutenFree): ");
             String pizzaTypeInput = scanner.nextLine();
             switch (pizzaTypeInput.toLowerCase()) {
@@ -36,14 +37,15 @@ public class PizzaStore {
                 default:
                     System.out.println("Invalid pizza type. Please try again.");
             }
-            pizzaOrder.prepare();
-            pizzaOrder.bake();
-            pizzaOrder.cut();
-            pizzaOrder.box();
-            valid = true;
+            if (pizzaOrder != null) {
+                pizzaOrder.prepare();
+                pizzaOrder.bake();
+                pizzaOrder.cut();
+                pizzaOrder.box();
+                valid = true;
+            }
         }
         scanner.close();
-
     }
 
     public PizzaStore(String name, String address) {
